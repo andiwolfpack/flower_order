@@ -15,50 +15,50 @@
 </template>
 
 <script>
-import axios from "axios";
-export default {
-  data: () => ({
-    headers: [
-      {
-        text: "Order ID",
-        align: "left",
-        sortable: true,
-        value: "id"
-      },
-      {
-        text: "Description",
-        value: "description"
-      },
-      {
-        text: "Price",
-        value: "price"
-      },
-      {
-        text: "Deliver to",
-        value: "deliver_to"
-      },
-      {
-        text: "Image",
-        value: "image"
-      }
-    ],
-    orders: [],
-    answer: "",
-    loading: true
-  }),
-  created: function() {
-    let _this = this;
-    axios
-      .get("https://demo5252393.mockable.io/flowers")
-      .then(function(response) {
-        _this.orders = response.data;
-        _this.loading = false;
-      })
-      .catch(function(error) {
-        _this.answer = "Error! Could not reach the API. " + error;
-      });
-  }
-};
+  import axios from "axios"
+  const API_URL = "https://demo5252393.mockable.io/flowers"
+  export default {
+    data: () => ({
+      headers: [{
+          text: "Order ID",
+          align: "left",
+          sortable: true,
+          value: "id"
+        },
+        {
+          text: "Description",
+          value: "description"
+        },
+        {
+          text: "Price",
+          value: "price"
+        },
+        {
+          text: "Deliver to",
+          value: "deliver_to"
+        },
+        {
+          text: "Image",
+          value: "image"
+        }
+      ],
+      orders: [],
+      answer: "",
+      loading: true
+    }),
+    created: function () {
+      let _this = this;
+      axios
+        .get(API_URL)
+        .then(function (response) {
+          _this.orders = response.data;
+          _this.loading = false;
+        })
+        .catch(function (error) {
+          _this.answer = "Error! Could not reach the API. " + error;
+        });
+    }
+  };
 </script>
 
 <style>
