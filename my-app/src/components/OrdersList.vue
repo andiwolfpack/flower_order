@@ -49,7 +49,7 @@ export default {
   created: function() {
     let _this = this;
     axios
-      .get("http://demo5252393.mockable.io/flowers")
+      .get("https://demo5252393.mockable.io/flowers")
       .then(function(response) {
         _this.orders = response.data;
         _this.loading = false;
