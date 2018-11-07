@@ -11,20 +11,19 @@
     </v-toolbar>
 
     <v-content>
-      <HelloWorld v-show="show"></HelloWorld>
+      <OrdersList v-show="show"></OrdersList>
     </v-content>
   </v-app>
 </template>
 
 <script>
-  import HelloWorld from './components/HelloWorld'
-  import Andi from './components/andi.vue'
+  import OrdersList from './components/OrdersList'
 
   export default {
     name: 'App',
 
     components: {
-      HelloWorld
+      OrdersList
     },
 
     data() {
